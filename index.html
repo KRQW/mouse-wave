@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<title>ripple-demo</title>
+    	<link href="view.css" rel="stylesheet" type="text/css" />
+	</head>
+<body>
+	<div>
+		<a class="btn ok" href="javascript:;">确定</a>
+		<a class="btn un" href="javascript:;">取消</a>
+	</div>
+
+</body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+
+        $('body').on('click',function(e){
+	        $('.ripple').remove();
+	        var _t = $(e.target),settime = null;
+	        //_t.css('position','relative');
+	        _t.append('<i class="ripple"></i>');
+
+	        var pX = (e.pageX - _t.offset().left);  
+	        var pY = (e.pageY - _t.offset().top);  
+	        $('.ripple').addClass('on').css({
+	            top : pY,
+	            left : pX
+	        });
+	        settime = setTimeout(function(){
+	        	$('.ripple').remove();
+	        },500);
+		})
+})
+</script>
+</html>

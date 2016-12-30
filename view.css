@@ -1,0 +1,102 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+a {
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: #333;
+}
+
+a:visited {
+    color: #525252;
+}
+
+body {
+    background-color: #fcd057;
+    font-size: 16px;
+    color: #020001;
+    font-family: 'Microsoft Yahei';
+}
+
+* {
+    tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+h1 {
+    font-size: 50px;
+    font-family: 'Norican', cursive;
+    color: white;
+    text-shadow: 0 2px 0 #8ed2d4,2px 3px 15px rgba(0,0,0,0.5);
+}
+
+.btn {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.ok {
+}
+
+.btn.un {
+}
+/******************** ripple **********************/
+.ripple.on {
+    -webkit-animation: rip .5s ease-out;
+    animation: rip .5s ease-out;
+}
+.p-ripple {
+    position: relative !important;
+}
+.ripple {
+    position: absolute !important;
+    border-radius: 2px !important;
+    width: 2px !important;
+    height: 2px !important;
+    display: block !important;
+    z-index: 99999;
+}
+@-webkit-keyframes rip {
+    0% {
+        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent;
+    }
+    15% {
+        box-shadow: 0 0 0 0 rgba(0,0,0,.1), 0 0 0 0 rgba(255,255,255,.1), 0 0 0 0 rgba(0,0,0,.1), 0 0 0 0 rgba(0,0,0,.1);
+    }
+    100% {
+        box-shadow: 0 0 1px 60px transparent;
+    }
+}
+
+@keyframes rip {
+    0% {
+        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent;
+    }
+    15% {
+        box-shadow: 0 0 0 0 rgba(0,0,0,.2), 0 0 0 0 rgba(255,255,255,.3), 0 0 0 0 rgba(0,0,0,.1), 0 0 0 0 rgba(0,0,0,.1);
+    }
+    100% {
+        box-shadow: 0 0 1px 50px transparent;
+    }
+}
