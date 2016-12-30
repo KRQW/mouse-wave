@@ -17,23 +17,22 @@
 <script type="text/javascript">
 $(function(){
 
-
-        $('body').on('click',function(e){
-	        $('.ripple').remove();
-	        var _t = $(e.target),settime = null;
-	        //_t.css('position','relative');
-	        _t.append('<i class="ripple"></i>');
-
-	        var pX = (e.pageX - _t.offset().left);  
-	        var pY = (e.pageY - _t.offset().top);  
-	        $('.ripple').addClass('on').css({
-	            top : pY,
-	            left : pX
-	        });
-	        settime = setTimeout(function(){
-	        	$('.ripple').remove();
-	        },500);
-		})
+	function _go(e){
+		$('.ripple').remove();
+        var _t = $(e.target),settime = null;
+        //_t.css('position','relative');
+        _t.append('<i class="ripple"></i>');
+        var pX = (e.pageX - _t.offset().left);  
+        var pY = (e.pageY - _t.offset().top);  
+        $('.ripple').addClass('on').css({
+            top : pY,
+            left : pX
+        });
+        settime = setTimeout(function(){
+        	$('.ripple').remove();
+        },500);
+	}
+    $('body .btn').on('mousedown',_go)
 })
 </script>
 </html>
