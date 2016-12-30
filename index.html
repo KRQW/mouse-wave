@@ -19,19 +19,21 @@ $(function(){
 
 	function _click(e){
         var _t = $(e.target),settime = null;
-        if(_t.find('> *').hasClass('ripple'))return;
-		$('.ripple').remove();
-        //_t.css('position','relative');
-        _t.append('<i class="ripple"></i>');
-        var pX = (e.pageX - _t.offset().left);  
-        var pY = (e.pageY - _t.offset().top);  
-        $('.ripple').addClass('on').css({
-            top : pY,
-            left : pX
-        });
-        settime = setTimeout(function(){
-        	$('.ripple').remove();
-        },500);
+		if ( $(".ripple").length === 0 ) {
+            Jripple = $("<i></i>").addClass("ripple");
+			_t.append(Jripple);
+			
+			var pX = (e.pageX - _t.offset().left);  
+			var pY = (e.pageY - _t.offset().top);
+			
+			$('.ripple').addClass('on').css({
+				top : pY,
+				left : pX
+			});
+			Jripple.one('animationend webkitAnimationEnd oanimationend MSAnimationEnd', function() {
+				$(this).remove();
+			});
+		}
 	}
     $('body .btn').on('mousedown',_click)
 })

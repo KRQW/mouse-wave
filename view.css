@@ -58,6 +58,10 @@ h1 {
     -webkit-user-select:none;
     -khtml-user-select:none;
     user-select:none;
+	
+    -webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .btn.ok {
@@ -66,6 +70,57 @@ h1 {
 .btn.un {
 }
 /******************** ripple **********************/
+
+/*
+.has-ripple {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.ripple{
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+
+    background: #fff;
+    opacity: 1;
+}
+.ripple.on {
+    -webkit-animation: ripple;
+    -o-animation: ripple;
+    animation: ripple;
+}
+@-webkit-keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+}
+@-o-keyframes ripple {
+    100% {
+        opacity: 0;
+        -o-transform: scale(2);
+        transform: scale(2);
+    }
+}
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+*/
+
+
+
 .ripple.on {
     -webkit-animation: rip .5s ease-out;
     animation: rip .5s ease-out;
@@ -78,9 +133,10 @@ h1 {
     border-radius: 2px !important;
     width: 2px !important;
     height: 2px !important;
-    display: block !important;
+    display: block !important;	
+    pointer-events: none;
     z-index: 99999;
-    background: rgba(0,0,0,0)
+    background: rgba(0,0,0,0);
 }
 @-webkit-keyframes rip {
     0% {
