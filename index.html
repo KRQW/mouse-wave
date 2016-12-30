@@ -17,9 +17,10 @@
 <script type="text/javascript">
 $(function(){
 
-	function _go(e){
-		$('.ripple').remove();
+	function _click(e){
         var _t = $(e.target),settime = null;
+        if(_t.find('> *').hasClass('ripple'))return;
+		$('.ripple').remove();
         //_t.css('position','relative');
         _t.append('<i class="ripple"></i>');
         var pX = (e.pageX - _t.offset().left);  
@@ -32,7 +33,7 @@ $(function(){
         	$('.ripple').remove();
         },500);
 	}
-    $('body .btn').on('mousedown',_go)
+    $('body .btn').on('mousedown',_click)
 })
 </script>
 </html>
